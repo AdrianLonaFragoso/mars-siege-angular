@@ -1,0 +1,11 @@
+@import "../../../styles/colors";
+
+h2 {
+  font-size: 1rem;
+}
+
+.progress {
+  transition: all ease 0.3s !important;
+  height: 2rem !important;
+  border-radius: 2rem !important;
+}

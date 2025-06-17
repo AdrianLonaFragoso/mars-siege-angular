@@ -1,0 +1,22 @@
+<section class="timeline-container">
+  <div id="timeline">
+    <div class="tl-item" *ngFor="let item of timeline">
+      <div class="tl-year">
+        <p class="f2 heading--sanSerif">{{ item.time }}</p>
+      </div>
+
+      <div class="tl-content">
+        <h1>{{ item.title }}</h1>
+        <p>
+          {{ item.paragraph }}
+        </p>
+
+        <h4 class="subheading">What will happen in this quarter</h4>
+
+        <ul class="tl-list">
+          <li *ngFor="let item of item.list">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

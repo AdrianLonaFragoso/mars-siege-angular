@@ -1,0 +1,73 @@
+<header class="header-wrapper">
+  <h1>MARS SIEGE</h1>
+
+  <button class="open-menu-btn" (click)="acivateMenu()" *ngIf="!showMenu">
+    <img
+      src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/icons/menu.svg"
+      alt=""
+    />
+  </button>
+  <nav
+    class="navbar navbar-expand-lg navbar-dark navbar-responsive"
+    [ngClass]="{ 'nav-active': showMenu }"
+  >
+    <button class="close-btn" (click)="acivateMenu()">X</button>
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a href="" class="nav-link">
+          <img
+            widht="200"
+            src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/mars-logo-white.svg"
+            alt=""
+          />
+        </a>
+      </li>
+      <li class="nav-item" *ngFor="let item of menu">
+        <a
+          *ngIf="item?.link"
+          class="nav-link cursor-pointer"
+          [routerLink]="item?.link"
+          [fragment]="item?.fragment"
+          (click)="acivateMenu()"
+          >{{ item.title }}</a
+        >
+
+        <a
+          *ngIf="item?.extLink"
+          class="nav-link cursor-pointer"
+          target="_blank"
+          [href]="item?.extLink"
+          (click)="acivateMenu()"
+          >{{ item.title }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<img
+  class="label-donate cursor-pointer floating-image"
+  src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/banner-donate.svg"
+  alt="Give us a donation and win big prices"
+  (click)="toggleDonateModal()"
+/>
+
+<app-modal-generic [modalGlass]="true" [modalActive]="donateModal">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1>Donation</h1>
+
+        <p>We need your support</p>
+
+        <p>
+          Donate and get an anticipated piece of land in a very good price and
+          help us with this amazing project
+        </p>
+      </div>
+    </div>
+
+    <!-- LEL -->
+    <app-donation-packs></app-donation-packs>
+  </div>
+</app-modal-generic>

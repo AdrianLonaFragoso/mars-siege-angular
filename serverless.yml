@@ -1,0 +1,43 @@
+service: mars-siege-client
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'main'}
+  region: us-west-2
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-domain-manager
+  - serverless-offline
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
+  customDomain:
+    domainName: client.mars-siege.com
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+
+package:
+  exclude:
+   - ./**
+   
+   ##- '!src/assets/**'
+   - '!node_modules/@vendia/**'
+   - '!node_modules/aws-serverless-express/**'
+   - '!node_modules/binary-case/**'
+   - '!node_modules/type-is/**'
+   - '!node_modules/media-typer/**'
+   - '!node_modules/mime-types/**'
+   - '!node_modules/mime-db/**'
+   - '!dist/**'
+   - '!lambda.js'
+
+functions:
+  api:
+    handler: lambda.serverless
+    events:
+      - http: 'ANY {proxy+}'
+      - http: 'ANY /'

@@ -1,0 +1,104 @@
+@import "../../../styles/colors";
+
+.donate-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.wallet-wrapper {
+  position: relative;
+  background-color: $color-primary;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  color: black !important;
+
+  h4 {
+    background: -webkit-linear-gradient(black, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .close-wallet {
+    position: absolute;
+    top: 1.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    color: black;
+    font-style: bold;
+  }
+
+  .wallet-container {
+    background-color: #38495a;
+    border: 1px solid #38495a;
+    padding: 0.5rem;
+    color: white;
+  }
+}
+
+// .donation-card {
+//   border-radius: 8px;
+//   padding: 0.3rem;
+//   background-image: linear-gradient(
+//     var(--rotate),
+//     #5ddcff,
+//     #3c67e3 43%,
+//     #4e00c2
+//   );
+//   z-index: -1;
+//   animation: spin 2.5s linear infinite;
+
+//   .card {
+//     background-color: black !important;
+//     min-height: 490px;
+//   }
+// }
+
+// .donation-card-primary {
+//   border-radius: 8px;
+//   padding: 0.3rem;
+//   background-image: linear-gradient(
+//     var(--rotate),
+//     #f3d31d,
+//     #eb9e0f 43%,
+//     #c21d00
+//   ) !important;
+//   z-index: -1;
+//   animation: spin 2.5s linear infinite;
+
+//   .card {
+//     background-color: black !important;
+//     min-height: 490px;
+//   }
+// }
+
+// @keyframes spin {
+//   0% {
+//     --rotate: 0deg;
+//   }
+
+//   100% {
+//     --rotate: 360deg;
+//   }
+// }
+
+.order-package {
+  order: -1;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 992px) {
+  .donate-container {
+    margin-left: 0.5rem;
+  }
+
+  .main-package {
+    transform: scale(1.2);
+    z-index: 5;
+  }
+
+  .order-package {
+    order: 0 !important;
+  }
+}

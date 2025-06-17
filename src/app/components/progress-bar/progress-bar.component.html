@@ -1,0 +1,46 @@
+<h1 class="text-center mb-5" (click)="getPercentage()">{{ progressTitle }}</h1>
+
+<div class="row">
+  <div class="col-12 mb-3">
+    <h3 class="text-center">
+      <span class="text-neuro">{{ mountAwayFrom | currency }}</span>
+    </h3>
+
+    <p class="text-center">Away from the goal</p>
+
+    <br />
+
+    <div class="progress">
+      <div
+        class="progress-bar bg-warning"
+        role="progressbar"
+        [style]="'width:' + mountPercentage"
+        [attr.aria-valuenow]="mountPercentage"
+        [attr.aria-valuemin]="0"
+        [attr.aria-valuemax]="100"
+      ></div>
+    </div>
+  </div>
+
+  <div class="col-6 text-left">
+    <h2 class="text-neuro">
+      {{ mountTotalDonation | currency }}
+    </h2>
+
+    <p>
+      Raised
+      <small>
+        {{ mountPercentage }}
+      </small>
+    </p>
+  </div>
+  <div class="col-6 text-right">
+    <h2 class="text-neuro">
+      {{ mountTotal | currency }}
+    </h2>
+    <p>
+      Total
+      <small> 100% </small>
+    </p>
+  </div>
+</div>

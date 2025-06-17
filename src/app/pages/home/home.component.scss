@@ -1,0 +1,225 @@
+$section-y-padding: 10rem;
+
+/*BANNER*/
+
+.banner-wapper {
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/universo.jpg)
+    fixed no-repeat center / cover;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  padding-top: 6rem;
+
+  .mars-planet {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .bottom-gradient {
+    z-index: 5;
+  }
+}
+
+/*WWHITEPAPER*/
+
+.white-paper-wrapper {
+  position: relative;
+  background: #020204
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/siege-ships.jpg)
+    fixed no-repeat center right/100%;
+  padding: $section-y-padding 3rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.start-wrapper {
+  position: relative;
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/bg-planet.jpg)
+    fixed no-repeat center / cover;
+  padding: $section-y-padding 3rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .owner-description {
+    padding-bottom: 8rem;
+    text-align: center;
+  }
+}
+
+.roadmap-wrapper {
+  position: relative;
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/universo.jpg)
+    fixed no-repeat center / cover;
+  padding: $section-y-padding 0;
+  padding-bottom: 0;
+}
+
+.resources-wrapper {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(41, 40, 114, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  padding: $section-y-padding 3rem;
+}
+
+.combinate-wrapper {
+  padding: $section-y-padding 0;
+
+  .engine-wrapper {
+    position: relative;
+    background: transparent
+      url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/engine.png)
+      scroll no-repeat center/100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aircraft-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+
+    .rolling-lines {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .stone {
+      width: 18rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .aircraft {
+      height: 200px;
+      margin: 2rem 0;
+    }
+
+    .water {
+      width: 18rem;
+      position: absolute !important;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.mothership-wrapper {
+  padding: $section-y-padding 1rem;
+  text-align: center;
+
+  .video-youtube {
+    width: 100%;
+    min-height: 400px;
+  }
+}
+
+.troops-wrapper {
+  padding: $section-y-padding 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(41, 40, 114, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  text-align: center;
+}
+
+.additional-wrapper {
+  padding: $section-y-padding 0;
+  text-align: center;
+}
+
+.probability-wrapper {
+  padding: $section-y-padding 0;
+  text-align: center;
+}
+
+.market-wrapper {
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/mars-background-transparen.png)
+    scroll no-repeat bottom/100%;
+  padding: $section-y-padding 0;
+  min-height: 100vh;
+
+  .mars-card {
+    background-color: rgba(56, 73, 90, 0.7);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.team-wrapper {
+  padding: $section-y-padding 0;
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/backourteam.jpg)
+    fixed no-repeat center / cover;
+
+  .team-img {
+    transition: all ease 0.3s;
+    border-radius: 50%;
+    width: 50%;
+    filter: grayscale(1);
+
+    &:hover {
+      filter: grayscale(0);
+      cursor: pointer;
+    }
+  }
+
+  .team-social {
+    img {
+      width: 2rem;
+    }
+  }
+}
+
+.donation-wrapper {
+  padding: $section-y-padding 0;
+}
+
+.video-container {
+  width: 100%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 780px) {
+  .mothership-wrapper {
+    padding: $section-y-padding 3rem;
+    text-align: center;
+
+    .video-youtube {
+      width: 70%;
+      height: 500px;
+    }
+  }
+
+  .white-paper-wrapper {
+    background: #020204
+      url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/siege-ships.jpg)
+      fixed no-repeat center right/50%;
+    padding: $section-y-padding 3rem;
+  }
+}

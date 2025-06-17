@@ -1,0 +1,54 @@
+@import "../../../styles/colors";
+
+.separator {
+  height: 5px;
+  background: $color-primary;
+  width: 100%;
+}
+
+.sponsors-wrapper {
+  background: transparent
+    url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/universo.jpg)
+    scroll no-repeat center / cover;
+  min-height: 100vh;
+  padding: 6rem 0;
+  position: relative;
+
+  .img-prices {
+    width: 200px;
+  }
+}
+
+.sponsors-loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+
+  .sponsors-inner {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.sponsor-name {
+  font-size: 1.2rem !important;
+}
+
+.sponsor-donation {
+  font-size: 1.5rem !important;
+}
+
+@media (min-width: 780px) {
+  .separator {
+    display: none;
+  }
+}

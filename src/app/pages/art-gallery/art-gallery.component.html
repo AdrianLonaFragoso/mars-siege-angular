@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="container text-center py-5 my-5">
+  <h1>Art Gallery</h1>
+
+  <div class="row mt-5">
+    <div
+      class="col-md-3 mb-3"
+      *ngFor="let item of gallery"
+      (click)="lightBox(item.src)"
+    >
+      <img class="w-100" [src]="item.src" [alt]="item.alt" />
+    </div>
+  </div>
+</div>

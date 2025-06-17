@@ -1,0 +1,100 @@
+@import "../../../styles/colors";
+
+.label-donate {
+  position: fixed;
+  top: 0;
+  left: 2rem;
+  width: 300px;
+  z-index: 9900;
+}
+
+.header-wrapper {
+  h1 {
+    text-align: center;
+    font-size: 5rem;
+    z-index: 3;
+  }
+
+  .navbar-responsive {
+    transition: all ease 0.5s;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  .open-menu-btn {
+    width: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+  }
+
+  .nav-active {
+    left: 0 !important;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    opacity: 1;
+
+    &:hover {
+      transition: all ease 0.3s;
+      font-weight: bold;
+      border-bottom: 2px solid white;
+      transform: scale(1.1);
+    }
+  }
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 992px) {
+  .header-wrapper {
+    .navbar-responsive {
+      width: auto;
+      height: auto;
+      position: relative;
+      left: auto;
+
+      background: transparent;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0);
+      -webkit-backdrop-filter: blur(0);
+
+      .close-btn {
+        display: none;
+      }
+    }
+
+    .open-menu-btn {
+      display: none;
+    }
+  }
+}

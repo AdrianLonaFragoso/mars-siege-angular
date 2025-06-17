@@ -1,0 +1,98 @@
+.floating-image {
+  position: relative;
+  -webkit-animation-name: floating;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes floating {
+  0% {
+    top: -0.5em;
+  }
+  50% {
+    top: 0.5em;
+  }
+  100% {
+    top: -0.5em;
+  }
+}
+/* Standard syntax */
+@keyframes floating {
+  0% {
+    top: -0.5em;
+  }
+  50% {
+    top: 0.5em;
+  }
+  100% {
+    top: -0.5em;
+  }
+}
+
+.floating-image-bottom {
+  position: relative;
+  -webkit-animation-name: floatingbottom;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s;
+  /* Safari 4.0 - 8.0 */
+  animation-name: floatingbottom;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes floatingbottom {
+  0% {
+    bottom: 0.5em;
+  }
+  50% {
+    bottom: -0.5em;
+  }
+  100% {
+    bottom: 0.5em;
+  }
+}
+/* Standard syntax */
+@keyframes floatingbottom {
+  0% {
+    bottom: 0.5em;
+  }
+  50% {
+    bottom: -0.5em;
+  }
+  100% {
+    bottom: 0.5em;
+  }
+}
+
+.crecent-element {
+  transition: all ease 0.3s;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: help;
+    z-index: 5;
+  }
+}
+
+.fade {
+  transition: all ease 0.3s;
+  transform: scale(0);
+  opacity: 0;
+
+  &-in {
+    transform: scale(1);
+    opacity: 1 !important;
+  }
+
+  &-out {
+    transform: scale(0);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,106 @@
+<main class="sponsors-wrapper">
+  <app-header></app-header>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center" *ngIf="sponsors.length">
+      <div class="col-lg-6 text-center mb-5">
+        <h2>Sponsors</h2>
+
+        <p>
+          Donate and win big prizes! Also, if you are one of our top three
+          contributors, you will receive extra prizes for your support.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-12" *ngFor="let sponsor of sponsors.slice(0, 3)">
+        <div class="card bg-transparent">
+          <div class="card-body text-center">
+            <img
+              *ngIf="sponsor.coolPosition"
+              [src]="
+                'https://mars-siege-assets.s3.us-west-2.amazonaws.com/medal/' +
+                sponsor.coolPosition +
+                '.svg'
+              "
+              [alt]="sponsor.name"
+            />
+            <h3 class="sponsor-name text-neuro">
+              {{ sponsor.name }}
+            </h3>
+            <h2 class="sponsor-donation text-neuro">
+              {{ sponsor.donation_amount | currency }}
+            </h2>
+            <img
+              [src]="
+                'https://mars-siege-assets.s3.us-west-2.amazonaws.com/flags/' +
+                sponsor.country.toLowerCase() +
+                '.svg'
+              "
+              width="32"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-dark bg-transparent" *ngIf="sponsors.length">
+      <thead class="bg-warning text-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Country</th>
+          <th scope="col">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="border">
+        <tr *ngFor="let sponsor of sponsors.slice(3); let i = index">
+          <th>{{ i + 4 }}</th>
+          <td>
+            <img
+              *ngIf="sponsor.coolPosition"
+              [src]="
+                'https://mars-siege-assets.s3.us-west-2.amazonaws.com/medal/' +
+                sponsor.coolPosition +
+                '.svg'
+              "
+              alt=""
+              class="mr-2"
+              width="24"
+            />
+            <span> {{ sponsor.name }}</span>
+          </td>
+          <td class="text-center">
+            <img
+              [src]="
+                'https://mars-siege-assets.s3.us-west-2.amazonaws.com/flags/' +
+                sponsor.country.toLowerCase() +
+                '.svg'
+              "
+              width="32"
+              alt=""
+            />
+          </td>
+          <td>{{ sponsor.donation_amount | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <small class="text-center w-100" *ngIf="sponsors.length">
+      *Prizes are subject to availability and will be delivered as long as they
+      exceed the amount of 100usd or the gold donation package.
+    </small>
+  </div>
+
+  <div class="sponsors-loading" *ngIf="!sponsors.length">
+    <div class="sponsors-inner">
+      <img
+        src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/sponsors/hud.svg"
+        alt=""
+      />
+      <span>Loading...</span>
+    </div>
+  </div>
+</main>

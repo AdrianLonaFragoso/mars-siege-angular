@@ -1,0 +1,7 @@
+<div class="mars-modal" [ngClass]="{ 'modal-active': modalActive }">
+  <div class="modal-backdrop"></div>
+  <div class="mars-modal-container" [ngClass]="{ 'modal-glass': modalGlass }">
+    <button class="close-btn" (click)="fuckOffModal()">X</button>
+    <ng-content> </ng-content>
+  </div>
+</div>

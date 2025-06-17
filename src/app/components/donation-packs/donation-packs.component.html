@@ -1,0 +1,122 @@
+<div class="row justify-content-center pt-5">
+  <div
+    class="col-lg-3 col-md-4 col-12"
+    [ngClass]="{ 'main-package order-package': item.mainPackage }"
+    *ngFor="let item of donations"
+  >
+    <div class="mb-4 mx-2">
+      <app-glow-wrapper [type]="item.type">
+        <div class="card bg-black border-0 h-100">
+          <img [src]="item.img" class="card-img-top" [alt]="item.title" />
+          <div class="card-body">
+            <div class="h-50">
+              <p class="card-title">Get these benefits</p>
+
+              <ul>
+                <li *ngFor="let subitem of item.benefits">{{ subitem }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </app-glow-wrapper>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-12 mt-5 mb-3">
+    <p class="text-center">Make a donation with the wallet of your choice</p>
+  </div>
+  <div class="col-lg-3 col-md-4 col-12">
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <input type="hidden" name="hosted_button_id" value="JW9MVM8DYMLX8" />
+      <input
+        class="btn btn-link w-100"
+        type="image"
+        src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/btn-pay-pay.svg"
+        border="0"
+        name="submit"
+        title="Help us to finish this amazing game!"
+        alt="Donate with PayPal button"
+      />
+    </form>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-12">
+    <button class="btn btn-link w-100" (click)="showWallet(1)">
+      <img
+        class="w-100"
+        src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/btn-bnb.svg"
+        alt="Donate with Binance"
+      />
+    </button>
+  </div>
+
+  <div class="col-lg-3 col-md-4 col-12">
+    <button class="btn btn-link w-100" (click)="showWallet(0)">
+      <img
+        src="https://mars-siege-assets.s3.us-west-2.amazonaws.com/home/btn-eth.svg"
+        alt="Donate with Ethereum"
+        class="w-100"
+      />
+    </button>
+  </div>
+
+  <div class="wallet-wrapper my-5 text-left" *ngIf="activeWallet">
+    <button class="btn btn-link close-wallet" (click)="closeWallet()">X</button>
+    <h4 class="mb-3">Our Wallet address:</h4>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="d-flex d-flex align-items-center justify-content-end h-100">
+          <img width="100" [src]="activeWallet.img" alt="" class="mr-3" />
+        </div>
+      </div>
+
+      <div class="col-9">
+        <span class="d-flex flex-column justify-content-start">
+          <b class="mb-2">{{ activeWallet.title }}</b>
+
+          <mat-form-field appearance="standard" color="primary" class="field">
+            <input matInput type="text" [formControl]="textControl" readonly />
+
+            <button
+              mat-icon-button
+              matSuffix
+              color="primary"
+              [disabled]="!textControl.value?.trim()"
+              (click)="copyToClipboard()"
+            >
+              <mat-icon style="color: black">file_copy</mat-icon>
+            </button>
+          </mat-form-field>
+        </span>
+
+        <div
+          class="alert alert-success fade d-flex align-items-center justify-content-between"
+          role="alert"
+          [ngClass]="{ 'fade-in': fadeAlert }"
+        >
+          Wallet copied to clipboard!
+          <mat-icon
+            class="cursor-pointer"
+            style="color: #155724"
+            (click)="fadeAlert = false"
+          >
+            close
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <small>
+      The exact size of the plots is subject to change before the beta launch.
+      There are no specific measurements and they are subject to the volume of
+      users. <br />
+      IMPORTANT: We have not announced a launch date yet. Please be patient and
+      help us.
+    </small>
+  </div>
+</div>

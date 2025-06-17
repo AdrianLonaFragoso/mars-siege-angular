@@ -1,0 +1,14 @@
+$section-y-padding: 5rem;
+
+footer {
+  background-color: #12171d;
+  padding: $section-y-padding 0;
+
+  .logo-footer {
+    width: 250px;
+  }
+
+  .soc-wrapper {
+    margin: 3rem 0;
+  }
+}

@@ -1,0 +1,74 @@
+.glow-card-primary {
+  --rotate: 45deg;
+
+  border-radius: 8px;
+  padding: 0.3rem;
+
+  background-image: linear-gradient(
+    var(--rotate),
+    #f3d31d,
+    #eb9e0f 43%,
+    #c21d00
+  ) !important;
+
+  box-shadow: 0 0 10px #eb9e0f;
+
+  z-index: -1;
+  animation: spin 2.5s linear infinite;
+  -moz-animation: spin 2.5s linear infinite;
+
+  .card {
+    background-color: transparent !important;
+    border: none;
+
+    .card-body {
+      padding: 0 !important;
+    }
+  }
+}
+
+.glow-card-secondary {
+  --rotate: 45deg;
+
+  border-radius: 8px;
+  padding: 0.3rem;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  ) !important;
+
+  box-shadow: 0 0 10px #3c67e3;
+  z-index: -1;
+  animation: spin 2.5s linear infinite;
+  -moz-animation: spin 2.5s linear infinite;
+  .card {
+    background-color: transparent !important;
+    border: none;
+
+    .card-body {
+      padding: 0 !important;
+    }
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+
+  100% {
+    --rotate: 360deg;
+  }
+}

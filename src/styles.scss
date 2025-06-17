@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+/*==============MARS GALACTIC WAR STYLES===================*/
+
+/*Imports*/
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+@import "styles/stars";
+@import "styles/colors";
+@import "styles/buttons";
+@import "styles/animations";
+@import "styles/scrollbar";
+
+/*Fonts*/
+@font-face {
+  font-family: Mars;
+  src: url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/fonts/Mars.otf);
+}
+
+@font-face {
+  font-family: Conthrax;
+  src: url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/fonts/conthrax.ttf);
+}
+
+@font-face {
+  font-family: NeuropolX;
+  src: url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/fonts/neuropolx.ttf);
+}
+
+.text-neuro {
+  font-family: "NeuropolX";
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "NeuropolX";
+  scroll-behavior: smooth !important;
+  font-size: 0.9rem;
+
+  /* The second value here is a fallback. */
+  cursor: url(https://mars-siege-assets.s3.us-west-2.amazonaws.com/cursor.png),
+    auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Mars";
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1 {
+  font-size: 1.7rem;
+}
+
+.top-gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+}
+
+.bottom-gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+}
+
+/*button up*/
+
+.up-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 780px) {
+  h1 {
+    font-size: 2rem;
+  }
+}

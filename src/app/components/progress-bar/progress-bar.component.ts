@@ -1,35 +1,35 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
+import { Component, Input, OnInit } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Component({
-  selector: 'app-progress-bar',
-  templateUrl: './progress-bar.component.html',
-  styleUrls: ['./progress-bar.component.scss'],
+  selector: "app-progress-bar",
+  templateUrl: "./progress-bar.component.html",
+  styleUrls: ["./progress-bar.component.scss"],
 })
 export class ProgressBarComponent implements OnInit {
-  @Input() progressTitle = '';
+  @Input() progressTitle = "";
 
   readonly ngUnsubscribe: Subject<void> = new Subject();
 
   sponsorProgressData: any;
   mountTotal = 83000;
-  mountAwayFrom: any;
+  mountAwayFrom: any = 45000;
 
-  mountPercentage: any;
-  mountTotalDonation: any;
+  mountPercentage: any = "50%";
+  mountTotalDonation: any = 38000;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http
-      .get('https://services.mars-siege.com/sponsors/progress', {})
-      .subscribe((data) => {
-        this.sponsorProgressData = data;
-        this.getMountAway();
-        this.getPercentage();
-        this.getTotalDonation();
-      });
+    // this.http
+    //   .get("https://services.mars-siege.com/sponsors/progress", {})
+    //   .subscribe((data) => {
+    //     this.sponsorProgressData = data;
+    //     this.getMountAway();
+    //     this.getPercentage();
+    //     this.getTotalDonation();
+    //   });
   }
 
   getMountAway() {
